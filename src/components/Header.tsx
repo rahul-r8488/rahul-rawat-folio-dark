@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import { Menu } from "lucide-react";
+import { Menu, X, Terminal } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Header = () => {
@@ -24,28 +24,38 @@ const Header = () => {
     setIsMobileMenuOpen(false);
   };
 
+  const menuItems = ["About", "Resume", "Portfolio", "Achievements", "Contact"];
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-gray-900/95 backdrop-blur-sm shadow-lg" : "bg-transparent"
+        isScrolled 
+          ? "bg-black/90 backdrop-blur-md border-b border-neon-cyan/30 shadow-lg shadow-neon-cyan/10" 
+          : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
-          <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
-            Rahul Singh Rawat
+          {/* Logo */}
+          <div className="flex items-center gap-3 group cursor-pointer">
+            <Terminal className="w-6 h-6 text-neon-cyan group-hover:animate-pulse-neon transition-all duration-300" />
+            <span className="font-mono text-neon-cyan text-lg font-bold tracking-wider group-hover:text-white transition-colors duration-300">
+              R.S.RAWAT
+            </span>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
-            {["About", "Resume", "Portfolio", "Achievements", "Contact"].map((item) => (
+          <nav className="hidden md:flex items-center space-x-1">
+            {menuItems.map((item, index) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item.toLowerCase())}
-                className="text-gray-300 hover:text-white transition-colors duration-300 relative group"
+                className="relative group px-4 py-2 font-mono text-sm tracking-wider text-gray-300 hover:text-neon-cyan transition-all duration-300"
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
-                {item}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-600 group-hover:w-full transition-all duration-300"></span>
+                <span className="relative z-10">{item.toUpperCase()}</span>
+                <div className="absolute inset-0 bg-neon-cyan/10 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded"></div>
+                <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-neon-cyan group-hover:w-full transition-all duration-300"></div>
               </button>
             ))}
           </nav>
@@ -54,23 +64,28 @@ const Header = () => {
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden text-white"
+            className="md:hidden text-neon-cyan hover:bg-neon-cyan/10 border border-neon-cyan/30 hover:border-neon-cyan transition-all duration-300"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            <Menu className="h-6 w-6" />
+            {isMobileMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
           </Button>
         </div>
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <nav className="md:hidden mt-4 space-y-4 bg-gray-800 rounded-lg p-4">
-            {["About", "Resume", "Portfolio", "Achievements", "Contact"].map((item) => (
+          <nav className="md:hidden mt-4 bg-gray-900/95 backdrop-blur-md rounded-lg border border-neon-cyan/30 p-4 animate-slide-up">
+            {menuItems.map((item, index) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item.toLowerCase())}
-                className="block w-full text-left text-gray-300 hover:text-white transition-colors duration-300"
+                className="block w-full text-left font-mono text-gray-300 hover:text-neon-cyan py-3 px-4 rounded hover:bg-neon-cyan/10 transition-all duration-300 border-l-2 border-transparent hover:border-neon-cyan"
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
-                {item}
+                {item.toUpperCase()}
               </button>
             ))}
           </nav>
