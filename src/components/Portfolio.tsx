@@ -29,7 +29,7 @@ const Portfolio = () => {
   ];
 
   return (
-    <section id="portfolio" className="py-24 pt-32 bg-gradient-to-br from-gray-900 via-black to-gray-900 relative overflow-hidden">
+    <section id="portfolio" className="py-24 pt-40 bg-gradient-to-br from-gray-900 via-black to-gray-900 relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0 opacity-3">
         <div className="absolute top-20 left-20 w-96 h-96 bg-neon-cyan/5 rounded-full blur-3xl animate-pulse"></div>
@@ -83,14 +83,14 @@ const Portfolio = () => {
               <CardFooter className="flex gap-3 pt-0">
                 <Button 
                   variant="outline" 
-                  className="flex-1 border-gray-600 text-gray-300 bg-gray-800/50 hover:border-neon-cyan hover:text-neon-cyan hover:bg-gray-700 font-mono text-xs transition-all duration-300"
+                  className="flex-1 border-gray-600 text-gray-300 bg-gray-800 hover:border-neon-cyan hover:text-neon-cyan hover:bg-gray-700 font-mono text-xs transition-all duration-300"
                   onClick={() => window.open(project.github, '_blank')}
                 >
                   <Github className="w-4 h-4 mr-2" />
                   SOURCE
                 </Button>
                 <Button 
-                  className="flex-1 bg-neon-cyan/90 hover:bg-neon-cyan text-black font-mono text-xs font-bold transition-all duration-300"
+                  className="flex-1 bg-neon-cyan text-black hover:bg-neon-blue hover:text-black font-mono text-xs font-bold transition-all duration-300"
                   onClick={() => window.open(project.live, '_blank')}
                 >
                   <ExternalLink className="w-4 h-4 mr-2" />
@@ -106,7 +106,7 @@ const Portfolio = () => {
           <Button
             size="lg"
             variant="outline"
-            className="border-2 border-neon-cyan text-neon-cyan bg-gray-900/50 hover:bg-neon-cyan hover:text-black font-mono font-bold px-8 py-4 transition-all duration-300"
+            className="border-2 border-neon-cyan text-neon-cyan bg-gray-800 hover:bg-neon-cyan hover:text-black font-mono font-bold px-8 py-4 transition-all duration-300"
           >
             VIEW_ALL_PROJECTS
           </Button>

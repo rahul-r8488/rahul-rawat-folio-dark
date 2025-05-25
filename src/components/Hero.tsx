@@ -84,7 +84,7 @@ const Hero = () => {
                 <Button
                   onClick={scrollToAbout}
                   size="lg"
-                  className="group relative overflow-hidden bg-transparent border-2 border-neon-cyan text-neon-cyan font-mono font-bold px-8 py-4 hover:bg-neon-cyan hover:text-black transition-all duration-300"
+                  className="group relative overflow-hidden bg-gray-800 border-2 border-neon-cyan text-neon-cyan font-mono font-bold px-8 py-4 hover:bg-neon-cyan hover:text-black transition-all duration-300"
                 >
                   <span className="relative z-10 flex items-center">
                     EXPLORE_PORTFOLIO
@@ -99,9 +99,8 @@ const Hero = () => {
             <div className="lg:col-span-4 space-y-6 animate-slide-left" style={{ animationDelay: '0.8s' }}>
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { label: "Projects", value: "15+", color: "text-neon-cyan" },
+                  { label: "Projects", value: "7+", color: "text-neon-cyan" },
                   { label: "Languages", value: "10+", color: "text-neon-purple" },
-                  { label: "Experience", value: "3Y", color: "text-neon-blue" },
                   { label: "GPA", value: "8.09", color: "text-neon-pink" }
                 ].map((stat, index) => (
                   <div key={index} className="relative group">
