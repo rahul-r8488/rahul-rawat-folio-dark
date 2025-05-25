@@ -42,11 +42,11 @@ const Portfolio = () => {
 
   return (
     <section id="portfolio" className="py-24 bg-gradient-to-br from-gray-900 via-black to-gray-900 relative overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 left-20 w-96 h-96 bg-neon-cyan/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-20 w-80 h-80 bg-neon-purple/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-neon-blue/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+      {/* Background Effects - Reduced opacity */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-20 left-20 w-96 h-96 bg-neon-cyan/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-80 h-80 bg-neon-purple/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-neon-blue/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '0.5s' }}></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
@@ -54,13 +54,13 @@ const Portfolio = () => {
         <div className="text-center mb-20 animate-fade-in">
           <div className="flex items-center justify-center gap-3 mb-6">
             <div className="h-px w-20 bg-gradient-to-r from-transparent to-neon-cyan"></div>
-            <Code2 className="w-8 h-8 text-neon-cyan animate-pulse-neon" />
+            <Code2 className="w-8 h-8 text-neon-cyan" />
             <div className="h-px w-20 bg-gradient-to-l from-transparent to-neon-cyan"></div>
           </div>
           
           <h2 className="text-6xl md:text-7xl font-black font-display mb-6">
             <span className="text-white">PORT</span>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan to-neon-purple animate-pulse-neon">FOLIO</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan to-neon-purple">FOLIO</span>
           </h2>
           
           <p className="text-gray-400 text-lg font-mono max-w-2xl mx-auto">
@@ -73,7 +73,7 @@ const Portfolio = () => {
           {projects.map((project, index) => (
             <Card 
               key={index} 
-              className="group bg-gray-900/50 border-gray-700/50 hover:border-neon-cyan/50 transition-all duration-500 backdrop-blur-sm overflow-hidden relative animate-slide-up"
+              className="group bg-gray-900/50 border-gray-700/50 hover:border-neon-cyan/30 transition-all duration-500 backdrop-blur-sm overflow-hidden relative animate-slide-up"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
               {/* Project Image */}
@@ -83,7 +83,7 @@ const Portfolio = () => {
                   alt={project.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
-                <div className={`absolute inset-0 bg-gradient-to-t ${project.gradient} opacity-20 group-hover:opacity-40 transition-opacity duration-500`}></div>
+                <div className={`absolute inset-0 bg-gradient-to-t ${project.gradient} opacity-10 group-hover:opacity-20 transition-opacity duration-500`}></div>
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent"></div>
                 
                 {/* Category Badge */}
@@ -132,7 +132,7 @@ const Portfolio = () => {
                   {project.technologies.map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className="bg-gray-800/50 border border-neon-cyan/20 text-neon-cyan px-3 py-1 rounded-full text-xs font-mono hover:border-neon-cyan/50 hover:bg-neon-cyan/10 transition-all duration-300 cursor-default"
+                      className="bg-gray-800/50 border border-neon-cyan/20 text-neon-cyan px-3 py-1 rounded-full text-xs font-mono hover:border-neon-cyan/40 hover:bg-neon-cyan/5 transition-all duration-300 cursor-default"
                     >
                       {tech}
                     </span>
@@ -143,7 +143,7 @@ const Portfolio = () => {
               <CardFooter className="flex gap-3 pt-0">
                 <Button 
                   variant="outline" 
-                  className="flex-1 border-gray-600 text-gray-300 hover:border-neon-cyan hover:text-neon-cyan hover:bg-neon-cyan/10 font-mono text-xs transition-all duration-300"
+                  className="flex-1 border-gray-600 text-gray-300 hover:border-neon-cyan hover:text-neon-cyan hover:bg-neon-cyan/5 font-mono text-xs transition-all duration-300"
                   onClick={() => window.open(project.github, '_blank')}
                 >
                   <Github className="w-4 h-4 mr-2" />
@@ -157,11 +157,6 @@ const Portfolio = () => {
                   DEPLOY
                 </Button>
               </CardFooter>
-
-              {/* Glow Effect */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-                <div className="absolute inset-0 bg-gradient-to-r from-neon-cyan/5 via-transparent to-neon-purple/5 rounded-lg"></div>
-              </div>
             </Card>
           ))}
         </div>
@@ -171,7 +166,7 @@ const Portfolio = () => {
           <Button
             size="lg"
             variant="outline"
-            className="border-2 border-neon-cyan text-neon-cyan hover:bg-neon-cyan hover:text-black font-mono font-bold px-8 py-4 hover:shadow-[0_0_30px_rgba(0,212,255,0.3)] transition-all duration-300"
+            className="border-2 border-neon-cyan text-neon-cyan hover:bg-neon-cyan hover:text-black font-mono font-bold px-8 py-4 transition-all duration-300"
           >
             VIEW_ALL_PROJECTS
           </Button>

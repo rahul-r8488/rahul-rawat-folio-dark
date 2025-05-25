@@ -12,8 +12,8 @@ const Hero = () => {
 
   return (
     <section className="min-h-screen relative overflow-hidden bg-black">
-      {/* Matrix Rain Effect */}
-      <div className="absolute inset-0 opacity-10">
+      {/* Matrix Rain Effect - Reduced opacity */}
+      <div className="absolute inset-0 opacity-5">
         {[...Array(50)].map((_, i) => (
           <div
             key={i}
@@ -29,11 +29,11 @@ const Hero = () => {
         ))}
       </div>
 
-      {/* Grid Background */}
-      <div className="absolute inset-0 opacity-20">
+      {/* Grid Background - Reduced opacity */}
+      <div className="absolute inset-0 opacity-10">
         <div className="h-full w-full bg-gradient-to-br from-transparent via-cyan-500/5 to-transparent"
              style={{
-               backgroundImage: 'linear-gradient(rgba(0,212,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(0,212,255,0.1) 1px, transparent 1px)',
+               backgroundImage: 'linear-gradient(rgba(0,212,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0,212,255,0.05) 1px, transparent 1px)',
                backgroundSize: '50px 50px'
              }}>
         </div>
@@ -48,7 +48,7 @@ const Hero = () => {
             <div className="lg:col-span-8 space-y-8">
               <div className="space-y-6 animate-slide-up">
                 <div className="flex items-center gap-3 mb-4">
-                  <Terminal className="w-6 h-6 text-neon-cyan animate-pulse-neon" />
+                  <Terminal className="w-6 h-6 text-neon-cyan" />
                   <span className="font-mono text-neon-cyan text-sm tracking-wider">PORTFOLIO.EXE</span>
                 </div>
                 
@@ -56,7 +56,7 @@ const Hero = () => {
                   <span className="block text-white hover:text-neon-cyan transition-colors duration-500 cursor-pointer">
                     RAHUL
                   </span>
-                  <span className="block text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan via-neon-blue to-neon-purple animate-pulse-neon">
+                  <span className="block text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan via-neon-blue to-neon-purple">
                     SINGH
                   </span>
                   <span className="block text-white/80 text-6xl lg:text-7xl">
@@ -84,7 +84,7 @@ const Hero = () => {
                 <Button
                   onClick={scrollToAbout}
                   size="lg"
-                  className="group relative overflow-hidden bg-transparent border-2 border-neon-cyan text-neon-cyan font-mono font-bold px-8 py-4 hover:bg-neon-cyan hover:text-black transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,212,255,0.5)]"
+                  className="group relative overflow-hidden bg-transparent border-2 border-neon-cyan text-neon-cyan font-mono font-bold px-8 py-4 hover:bg-neon-cyan hover:text-black transition-all duration-300"
                 >
                   <span className="relative z-10 flex items-center">
                     EXPLORE_PORTFOLIO
@@ -105,7 +105,7 @@ const Hero = () => {
                   { label: "GPA", value: "8.09", color: "text-neon-pink" }
                 ].map((stat, index) => (
                   <div key={index} className="relative group">
-                    <div className="bg-gray-900/50 border border-gray-700/50 rounded-lg p-4 backdrop-blur-sm hover:border-neon-cyan/50 transition-all duration-300 hover:bg-gray-800/50">
+                    <div className="bg-gray-900/50 border border-gray-700/50 rounded-lg p-4 backdrop-blur-sm hover:border-neon-cyan/30 transition-all duration-300 hover:bg-gray-800/50">
                       <div className={`text-3xl font-black font-mono ${stat.color} mb-1`}>
                         {stat.value}
                       </div>
@@ -113,7 +113,6 @@ const Hero = () => {
                         {stat.label}
                       </div>
                     </div>
-                    <div className="absolute inset-0 bg-gradient-to-r from-neon-cyan/10 to-neon-purple/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
                   </div>
                 ))}
               </div>

@@ -62,17 +62,17 @@ const Contact = () => {
 
   return (
     <section id="contact" className="py-24 bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-10 right-10 w-96 h-96 bg-neon-purple/30 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-10 left-10 w-80 h-80 bg-neon-cyan/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+      {/* Background Effects - Reduced opacity */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-10 right-10 w-96 h-96 bg-neon-purple/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-10 left-10 w-80 h-80 bg-neon-cyan/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
       </div>
 
-      {/* Grid Lines */}
-      <div className="absolute inset-0 opacity-5">
+      {/* Grid Lines - Reduced opacity */}
+      <div className="absolute inset-0 opacity-3">
         <div className="h-full w-full"
              style={{
-               backgroundImage: 'linear-gradient(rgba(0,212,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(0,212,255,0.1) 1px, transparent 1px)',
+               backgroundImage: 'linear-gradient(rgba(0,212,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0,212,255,0.05) 1px, transparent 1px)',
                backgroundSize: '100px 100px'
              }}>
         </div>
@@ -83,13 +83,13 @@ const Contact = () => {
         <div className="text-center mb-20 animate-fade-in">
           <div className="flex items-center justify-center gap-3 mb-6">
             <div className="h-px w-20 bg-gradient-to-r from-transparent to-neon-cyan"></div>
-            <MessageSquare className="w-8 h-8 text-neon-cyan animate-pulse-neon" />
+            <MessageSquare className="w-8 h-8 text-neon-cyan" />
             <div className="h-px w-20 bg-gradient-to-l from-transparent to-neon-cyan"></div>
           </div>
           
           <h2 className="text-6xl md:text-7xl font-black font-display mb-6">
             <span className="text-white">CON</span>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan to-neon-purple animate-pulse-neon">TACT</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan to-neon-purple">TACT</span>
           </h2>
           
           <p className="text-gray-400 text-lg font-mono max-w-2xl mx-auto">
@@ -101,7 +101,7 @@ const Contact = () => {
           
           {/* Contact Form */}
           <div className="lg:col-span-7 animate-slide-up">
-            <Card className="bg-gray-900/50 border-gray-700/50 backdrop-blur-sm hover:border-neon-cyan/30 transition-all duration-500">
+            <Card className="bg-gray-900/50 border-gray-700/50 backdrop-blur-sm hover:border-neon-cyan/20 transition-all duration-500">
               <CardHeader>
                 <CardTitle className="text-white text-2xl font-display font-bold flex items-center gap-3">
                   <Terminal className="w-6 h-6 text-neon-cyan" />
@@ -122,7 +122,7 @@ const Contact = () => {
                         placeholder="Enter your name"
                         value={formData.name}
                         onChange={handleChange}
-                        className="bg-gray-800/50 border-gray-600/50 text-white placeholder-gray-500 focus:border-neon-cyan focus:ring-neon-cyan/20 rounded-lg h-12 font-mono transition-all duration-300"
+                        className="bg-gray-800/50 border-gray-600/50 text-white placeholder-gray-500 focus:border-neon-cyan focus:ring-neon-cyan/10 rounded-lg h-12 font-mono transition-all duration-300"
                         required
                       />
                     </div>
@@ -134,7 +134,7 @@ const Contact = () => {
                         placeholder="Enter your email"
                         value={formData.email}
                         onChange={handleChange}
-                        className="bg-gray-800/50 border-gray-600/50 text-white placeholder-gray-500 focus:border-neon-cyan focus:ring-neon-cyan/20 rounded-lg h-12 font-mono transition-all duration-300"
+                        className="bg-gray-800/50 border-gray-600/50 text-white placeholder-gray-500 focus:border-neon-cyan focus:ring-neon-cyan/10 rounded-lg h-12 font-mono transition-all duration-300"
                         required
                       />
                     </div>
@@ -148,14 +148,14 @@ const Contact = () => {
                       value={formData.message}
                       onChange={handleChange}
                       rows={6}
-                      className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600/50 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-neon-cyan focus:ring-2 focus:ring-neon-cyan/20 resize-none font-mono transition-all duration-300"
+                      className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600/50 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-neon-cyan focus:ring-2 focus:ring-neon-cyan/10 resize-none font-mono transition-all duration-300"
                       required
                     ></textarea>
                   </div>
                   
                   <Button 
                     type="submit" 
-                    className="w-full bg-gradient-to-r from-neon-cyan to-neon-blue hover:from-neon-blue hover:to-neon-purple text-black font-mono font-bold h-12 text-lg transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,212,255,0.3)]"
+                    className="w-full bg-gradient-to-r from-neon-cyan to-neon-blue hover:from-neon-blue hover:to-neon-purple text-black font-mono font-bold h-12 text-lg transition-all duration-300"
                   >
                     <Send className="w-5 h-5 mr-3" />
                     TRANSMIT_MESSAGE
@@ -189,7 +189,7 @@ const Contact = () => {
               {contactInfo.map((info, index) => (
                 <div 
                   key={index}
-                  className={`bg-gray-800/30 border border-gray-700/50 rounded-lg p-4 backdrop-blur-sm hover:border-neon-cyan/50 transition-all duration-300 ${info.action ? 'cursor-pointer hover:bg-gray-800/50' : ''} group`}
+                  className={`bg-gray-800/30 border border-gray-700/50 rounded-lg p-4 backdrop-blur-sm hover:border-neon-cyan/30 transition-all duration-300 ${info.action ? 'cursor-pointer hover:bg-gray-800/50' : ''} group`}
                   onClick={info.action || undefined}
                 >
                   <div className="flex items-center space-x-4">
@@ -223,7 +223,7 @@ const Contact = () => {
                     key={index}
                     variant="outline"
                     size="icon"
-                    className={`border-gray-600/50 text-gray-400 hover:border-neon-cyan ${social.color} hover:bg-neon-cyan/10 w-12 h-12 rounded-xl transition-all duration-300 group`}
+                    className={`border-gray-600/50 text-gray-400 hover:border-neon-cyan ${social.color} hover:bg-neon-cyan/5 w-12 h-12 rounded-xl transition-all duration-300 group`}
                     onClick={() => window.open(social.url, "_blank")}
                   >
                     <social.icon className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
