@@ -124,9 +124,9 @@ const Hero = () => {
                   <span className="font-mono text-neon-cyan text-sm">STATUS</span>
                 </div>
                 <p className="text-gray-300 font-mono text-sm leading-relaxed">
-                  > Available for opportunities<br/>
-                  > Building innovative solutions<br/>
-                  > Currently at GEHU, Dehradun
+                  {'>'} Available for opportunities<br/>
+                  {'>'} Building innovative solutions<br/>
+                  {'>'} Currently at GEHU, Dehradun
                 </p>
               </div>
             </div>

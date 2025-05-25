@@ -93,7 +93,7 @@ const Contact = () => {
           </h2>
           
           <p className="text-gray-400 text-lg font-mono max-w-2xl mx-auto">
-            > Let's collaborate and build something extraordinary together
+            {'>'}  Let's collaborate and build something extraordinary together
           </p>
         </div>
 
@@ -108,7 +108,7 @@ const Contact = () => {
                   Send Message
                 </CardTitle>
                 <p className="text-gray-400 font-mono text-sm">
-                  > Initialize communication protocol
+                  {'>'} Initialize communication protocol
                 </p>
               </CardHeader>
               <CardContent>

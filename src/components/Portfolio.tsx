@@ -64,7 +64,7 @@ const Portfolio = () => {
           </h2>
           
           <p className="text-gray-400 text-lg font-mono max-w-2xl mx-auto">
-            > Showcasing innovative solutions and cutting-edge technologies
+            {'>'} Showcasing innovative solutions and cutting-edge technologies
           </p>
         </div>
 
