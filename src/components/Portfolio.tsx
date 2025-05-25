@@ -71,29 +71,6 @@ const Portfolio = () => {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent"></div>
-                
-                {/* Hover Overlay */}
-                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
-                  <div className="flex gap-3">
-                    <Button
-                      size="sm"
-                      variant="outline"
-                      className="border-white/80 text-white hover:bg-white hover:text-black font-mono"
-                      onClick={() => window.open(project.github, '_blank')}
-                    >
-                      <Github className="w-4 h-4 mr-2" />
-                      CODE
-                    </Button>
-                    <Button
-                      size="sm"
-                      className="bg-neon-cyan text-black hover:bg-neon-blue font-mono"
-                      onClick={() => window.open(project.live, '_blank')}
-                    >
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      LIVE
-                    </Button>
-                  </div>
-                </div>
               </div>
               
               {/* Project Content - 40% */}
@@ -106,7 +83,7 @@ const Portfolio = () => {
               <CardFooter className="flex gap-3 pt-0">
                 <Button 
                   variant="outline" 
-                  className="flex-1 border-white/60 text-white hover:border-white hover:text-black hover:bg-white font-mono text-xs transition-all duration-300"
+                  className="flex-1 border-gray-500 text-gray-300 hover:border-neon-cyan hover:text-neon-cyan hover:bg-gray-800 font-mono text-xs transition-all duration-300"
                   onClick={() => window.open(project.github, '_blank')}
                 >
                   <Github className="w-4 h-4 mr-2" />
@@ -117,7 +94,7 @@ const Portfolio = () => {
                   onClick={() => window.open(project.live, '_blank')}
                 >
                   <ExternalLink className="w-4 h-4 mr-2" />
-                  DEPLOY
+                  LIVE
                 </Button>
               </CardFooter>
             </Card>

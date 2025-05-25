@@ -8,7 +8,13 @@ const Achievements = () => {
       title: "HackerRank Problem Solving (Intermediate) Certificate",
       description: "Demonstrated proficiency in algorithmic problem-solving and data structures",
       date: "2024",
-      link: "#"
+      link: "https://www.hackerrank.com/certificates/0da78f04b60e"
+    },
+    {
+      title: "HackerRank Problem Solving (Basic) Certificate",
+      description: "Foundation skills in algorithmic problem-solving and programming logic",
+      date: "2024",
+      link: "https://www.hackerrank.com/certificates/0da78f04b60e"
     },
     {
       title: "400+ Problems Solved",
