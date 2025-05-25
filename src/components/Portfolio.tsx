@@ -1,52 +1,39 @@
 
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { ExternalLink, Github, Code2, Database, Globe } from "lucide-react";
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { ExternalLink, Github, Code2 } from "lucide-react";
 
 const Portfolio = () => {
   const projects = [
     {
       title: "Text to Speech & Speech to Text for Indian Languages",
-      description: "AI-powered language processing system enabling seamless conversion between speech and text for Hindi and regional Indian languages.",
       technologies: ["Python", "Speech APIs", "AI/ML", "NLP"],
       github: "#",
       live: "#",
-      image: "https://images.unsplash.com/photo-1589254065878-42c9da997008?w=800&h=600&fit=crop",
-      category: "AI/ML",
-      icon: Code2,
-      gradient: "from-neon-cyan via-neon-blue to-neon-purple"
+      image: "https://images.unsplash.com/photo-1589254065878-42c9da997008?w=800&h=600&fit=crop"
     },
     {
       title: "Full-Stack E-Commerce Platform",
-      description: "Complete shopping ecosystem with real-time inventory, secure payments, user authentication, and advanced analytics dashboard.",
       technologies: ["ReactJS", "Firebase", "Node.js", "MongoDB", "Stripe"],
       github: "#",
       live: "#",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop",
-      category: "Web App",
-      icon: Database,
-      gradient: "from-neon-purple via-neon-pink to-neon-cyan"
+      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop"
     },
     {
       title: "Real-Time Crypto Analytics Dashboard",
-      description: "Advanced cryptocurrency tracking platform with live data visualization, portfolio management, and market trend analysis.",
       technologies: ["ReactJS", "WebSocket", "Chart.js", "REST API", "Tailwind"],
       github: "#",
       live: "#",
-      image: "https://images.unsplash.com/photo-1642790595256-3426fb9bd4d7?w=800&h=600&fit=crop",
-      category: "Dashboard",
-      icon: Globe,
-      gradient: "from-neon-blue via-neon-cyan to-neon-green"
+      image: "https://images.unsplash.com/photo-1642790595256-3426fb9bd4d7?w=800&h=600&fit=crop"
     }
   ];
 
   return (
     <section id="portfolio" className="py-24 bg-gradient-to-br from-gray-900 via-black to-gray-900 relative overflow-hidden">
-      {/* Background Effects - Reduced opacity */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-20 left-20 w-96 h-96 bg-neon-cyan/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-20 w-80 h-80 bg-neon-purple/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-neon-blue/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+      {/* Background Effects */}
+      <div className="absolute inset-0 opacity-3">
+        <div className="absolute top-20 left-20 w-96 h-96 bg-neon-cyan/5 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-80 h-80 bg-neon-purple/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
@@ -64,7 +51,7 @@ const Portfolio = () => {
           </h2>
           
           <p className="text-gray-400 text-lg font-mono max-w-2xl mx-auto">
-            {'>'} Showcasing innovative solutions and cutting-edge technologies
+            {'{>'} Showcasing innovative solutions and cutting-edge technologies
           </p>
         </div>
 
@@ -73,34 +60,25 @@ const Portfolio = () => {
           {projects.map((project, index) => (
             <Card 
               key={index} 
-              className="group bg-gray-900/50 border-gray-700/50 hover:border-neon-cyan/30 transition-all duration-500 backdrop-blur-sm overflow-hidden relative animate-slide-up"
+              className="group bg-gray-900/80 border-gray-700/50 hover:border-gray-600 transition-all duration-300 backdrop-blur-sm overflow-hidden relative animate-slide-up"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
-              {/* Project Image */}
-              <div className="relative overflow-hidden h-48">
+              {/* Project Image - 60% */}
+              <div className="relative overflow-hidden h-56">
                 <img 
                   src={project.image} 
                   alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className={`absolute inset-0 bg-gradient-to-t ${project.gradient} opacity-10 group-hover:opacity-20 transition-opacity duration-500`}></div>
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent"></div>
                 
-                {/* Category Badge */}
-                <div className="absolute top-4 left-4">
-                  <div className="flex items-center gap-2 bg-black/50 backdrop-blur-sm px-3 py-1 rounded-full border border-neon-cyan/30">
-                    <project.icon className="w-4 h-4 text-neon-cyan" />
-                    <span className="text-neon-cyan text-xs font-mono font-bold">{project.category}</span>
-                  </div>
-                </div>
-
                 {/* Hover Overlay */}
                 <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
                   <div className="flex gap-3">
                     <Button
                       size="sm"
                       variant="outline"
-                      className="border-neon-cyan text-neon-cyan hover:bg-neon-cyan hover:text-black font-mono"
+                      className="border-white/80 text-white hover:bg-white hover:text-black font-mono"
                       onClick={() => window.open(project.github, '_blank')}
                     >
                       <Github className="w-4 h-4 mr-2" />
@@ -118,39 +96,24 @@ const Portfolio = () => {
                 </div>
               </div>
               
-              <CardHeader className="space-y-3">
-                <CardTitle className="text-white group-hover:text-neon-cyan transition-colors duration-300 font-display text-xl leading-tight">
+              {/* Project Content - 40% */}
+              <CardHeader className="pb-4">
+                <CardTitle className="text-white group-hover:text-neon-cyan transition-colors duration-300 font-display text-lg leading-tight">
                   {project.title}
                 </CardTitle>
-                <CardDescription className="text-gray-400 leading-relaxed text-sm">
-                  {project.description}
-                </CardDescription>
               </CardHeader>
-
-              <CardContent>
-                <div className="flex flex-wrap gap-2">
-                  {project.technologies.map((tech, techIndex) => (
-                    <span
-                      key={techIndex}
-                      className="bg-gray-800/50 border border-neon-cyan/20 text-neon-cyan px-3 py-1 rounded-full text-xs font-mono hover:border-neon-cyan/40 hover:bg-neon-cyan/5 transition-all duration-300 cursor-default"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </CardContent>
 
               <CardFooter className="flex gap-3 pt-0">
                 <Button 
                   variant="outline" 
-                  className="flex-1 border-gray-600 text-gray-300 hover:border-neon-cyan hover:text-neon-cyan hover:bg-neon-cyan/5 font-mono text-xs transition-all duration-300"
+                  className="flex-1 border-white/60 text-white hover:border-white hover:text-black hover:bg-white font-mono text-xs transition-all duration-300"
                   onClick={() => window.open(project.github, '_blank')}
                 >
                   <Github className="w-4 h-4 mr-2" />
                   SOURCE
                 </Button>
                 <Button 
-                  className="flex-1 bg-gradient-to-r from-neon-cyan to-neon-blue hover:from-neon-blue hover:to-neon-purple text-black font-mono text-xs font-bold transition-all duration-300"
+                  className="flex-1 bg-neon-cyan hover:bg-neon-blue text-black font-mono text-xs font-bold transition-all duration-300"
                   onClick={() => window.open(project.live, '_blank')}
                 >
                   <ExternalLink className="w-4 h-4 mr-2" />
