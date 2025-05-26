@@ -1,6 +1,7 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { ExternalLink } from "lucide-react";
 
 const Achievements = () => {
   const achievements = [
@@ -20,6 +21,29 @@ const Achievements = () => {
       title: "400+ Problems Solved",
       description: "Successfully solved over 400 coding problems on platforms like LeetCode and HackerRank",
       date: "Ongoing",
+      link: "#"
+    }
+  ];
+
+  const certificates = [
+    {
+      name: "HackerRank Problem Solving (Intermediate)",
+      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=600&fit=crop",
+      link: "https://www.hackerrank.com/certificates/0da78f04b60e"
+    },
+    {
+      name: "HackerRank Problem Solving (Basic)",
+      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=800&h=600&fit=crop",
+      link: "https://www.hackerrank.com/certificates/0da78f04b60e"
+    },
+    {
+      name: "Coding Excellence",
+      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=600&fit=crop",
+      link: "#"
+    },
+    {
+      name: "Algorithm Mastery",
+      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=600&fit=crop",
       link: "#"
     }
   ];
@@ -49,7 +73,7 @@ const Achievements = () => {
                     <Button 
                       variant="outline" 
                       size="sm"
-                      className="border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white"
+                      className="border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-black"
                       onClick={() => window.open(achievement.link, '_blank')}
                     >
                       View Certificate
@@ -63,14 +87,31 @@ const Achievements = () => {
           {/* Certificate Gallery Section */}
           <div className="text-center">
             <h3 className="text-2xl font-bold text-white mb-8">Certificate Gallery</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {[1, 2, 3, 4].map((cert, index) => (
-                <div key={index} className="bg-gray-800 rounded-lg p-4 border border-gray-700 hover:border-blue-500 transition-colors duration-300 cursor-pointer">
-                  <div className="aspect-square bg-gray-700 rounded-lg mb-3 flex items-center justify-center">
-                    <span className="text-gray-500 text-sm">Certificate {cert}</span>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {certificates.map((cert, index) => (
+                <Card key={index} className="bg-gray-800 border-gray-700 hover:border-blue-500 transition-all duration-300 group overflow-hidden">
+                  <div className="relative overflow-hidden">
+                    <img 
+                      src={cert.image} 
+                      alt={cert.name}
+                      className="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent"></div>
                   </div>
-                  <p className="text-sm text-gray-400">Certificate {cert}</p>
-                </div>
+                  <CardContent className="p-4">
+                    <h4 className="text-white font-semibold text-sm mb-3 line-clamp-2 group-hover:text-blue-400 transition-colors duration-300">
+                      {cert.name}
+                    </h4>
+                    <Button 
+                      size="sm"
+                      className="w-full bg-blue-600 hover:bg-blue-500 text-white font-mono text-xs"
+                      onClick={() => window.open(cert.link, '_blank')}
+                    >
+                      <ExternalLink className="w-3 h-3 mr-2" />
+                      VIEW
+                    </Button>
+                  </CardContent>
+                </Card>
               ))}
             </div>
           </div>
