@@ -16,13 +16,33 @@ const Achievements = () => {
       link: "https://www.hackerrank.com/certificates/0da78f04b60e"
     },
     {
-      name: "Coding Excellence",
-      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=600&fit=crop",
+      name: "AWS Cloud Practitioner",
+      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop",
       link: "#"
     },
     {
-      name: "Algorithm Mastery",
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=600&fit=crop",
+      name: "Google Analytics Certified",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
+      link: "#"
+    },
+    {
+      name: "React Developer Certification",
+      image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=600&fit=crop",
+      link: "#"
+    },
+    {
+      name: "MongoDB Developer Path",
+      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop",
+      link: "#"
+    },
+    {
+      name: "Docker Certified Associate",
+      image: "https://images.unsplash.com/photo-1605745341112-85968b19335b?w=800&h=600&fit=crop",
+      link: "#"
+    },
+    {
+      name: "JavaScript Algorithms and Data Structures",
+      image: "https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=800&h=600&fit=crop",
       link: "#"
     }
   ];

@@ -25,6 +25,34 @@ const Portfolio = () => {
       github: "#",
       live: "#",
       image: "https://images.unsplash.com/photo-1642790595256-3426fb9bd4d7?w=800&h=600&fit=crop"
+    },
+    {
+      title: "AI-Powered Task Management System",
+      technologies: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "OpenAI"],
+      github: "#",
+      live: "#",
+      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop"
+    },
+    {
+      title: "Social Media Analytics Platform",
+      technologies: ["React", "Node.js", "Express", "Redis", "Chart.js"],
+      github: "#",
+      live: "#",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
+    },
+    {
+      title: "Smart IoT Home Automation",
+      technologies: ["Arduino", "Python", "MQTT", "React", "Firebase"],
+      github: "#",
+      live: "#",
+      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop"
+    },
+    {
+      title: "Machine Learning Prediction Engine",
+      technologies: ["Python", "TensorFlow", "Flask", "Docker", "AWS"],
+      github: "#",
+      live: "#",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop"
     }
   ];
 
