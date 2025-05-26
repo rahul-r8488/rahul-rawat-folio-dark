@@ -55,9 +55,9 @@ const Contact = () => {
   ];
 
   const socialLinks = [
-    { icon: Github, label: "GitHub", url: "#", color: "hover:text-neon-cyan" },
-    { icon: Linkedin, label: "LinkedIn", url: "#", color: "hover:text-neon-blue" },
-    { icon: Terminal, label: "Dev.to", url: "#", color: "hover:text-neon-purple" }
+    { icon: Github, label: "GitHub", url: "#", color: "hover:text-purple-400" },
+    { icon: Linkedin, label: "LinkedIn", url: "#", color: "hover:text-blue-400" },
+    { icon: Terminal, label: "Dev.to", url: "#", color: "hover:text-green-400" }
   ];
 
   return (
@@ -223,7 +223,7 @@ const Contact = () => {
                     key={index}
                     variant="outline"
                     size="icon"
-                    className={`border-gray-600/50 text-gray-400 hover:border-neon-cyan ${social.color} hover:bg-neon-cyan/5 w-12 h-12 rounded-xl transition-all duration-300 group`}
+                    className={`border-gray-600/50 text-gray-300 hover:border-neon-cyan ${social.color} hover:bg-neon-cyan/5 w-12 h-12 rounded-xl transition-all duration-300 group`}
                     onClick={() => window.open(social.url, "_blank")}
                   >
                     <social.icon className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
