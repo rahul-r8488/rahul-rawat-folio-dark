@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Terminal } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -19,7 +20,7 @@ const Header = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
     setIsMobileMenuOpen(false);
   };
@@ -38,7 +39,7 @@ const Header = () => {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="flex items-center gap-3 group cursor-pointer">
-            <Terminal className="w-6 h-6 text-neon-cyan group-hover:animate-pulse-neon transition-all duration-300" />
+            <Terminal className="w-6 h-6 text-neon-cyan group-hover:animate-pulse transition-all duration-300" />
             <span className="font-mono text-neon-cyan text-lg font-bold tracking-wider group-hover:text-white transition-colors duration-300">
               R.S.RAWAT
             </span>
@@ -50,7 +51,7 @@ const Header = () => {
               <button
                 key={item}
                 onClick={() => scrollToSection(item.toLowerCase())}
-                className="relative group px-4 py-2 font-mono text-sm tracking-wider text-gray-300 hover:text-neon-cyan transition-all duration-300"
+                className="relative group px-4 py-2 font-mono text-sm tracking-wider text-gray-300 hover:text-neon-cyan transition-all duration-300 hover:scale-105"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <span className="relative z-10">{item.toUpperCase()}</span>
@@ -60,19 +61,22 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* Mobile Menu Button */}
-          <Button
-            variant="ghost"
-            size="icon"
-            className="md:hidden text-neon-cyan hover:bg-neon-cyan/10 border border-neon-cyan/30 hover:border-neon-cyan transition-all duration-300"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? (
-              <X className="h-6 w-6" />
-            ) : (
-              <Menu className="h-6 w-6" />
-            )}
-          </Button>
+          {/* Theme Toggle and Mobile Menu */}
+          <div className="flex items-center gap-3">
+            <ThemeToggle />
+            <Button
+              variant="ghost"
+              size="icon"
+              className="md:hidden text-neon-cyan hover:bg-neon-cyan/10 border border-neon-cyan/30 hover:border-neon-cyan transition-all duration-300 hover:scale-105"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
+            </Button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
@@ -82,7 +86,7 @@ const Header = () => {
               <button
                 key={item}
                 onClick={() => scrollToSection(item.toLowerCase())}
-                className="block w-full text-left font-mono text-gray-300 hover:text-neon-cyan py-3 px-4 rounded hover:bg-neon-cyan/10 transition-all duration-300 border-l-2 border-transparent hover:border-neon-cyan"
+                className="block w-full text-left font-mono text-gray-300 hover:text-neon-cyan py-3 px-4 rounded hover:bg-neon-cyan/10 transition-all duration-300 border-l-2 border-transparent hover:border-neon-cyan hover:scale-105"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {item.toUpperCase()}
