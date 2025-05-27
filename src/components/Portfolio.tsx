@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { ExternalLink, Github, Code2 } from "lucide-react";
@@ -127,17 +126,6 @@ const Portfolio = () => {
               </CardFooter>
             </Card>
           ))}
-        </div>
-
-        {/* View More Button */}
-        <div className="text-center mt-16 animate-fade-in" style={{ animationDelay: '1s' }}>
-          <Button
-            size="lg"
-            variant="outline"
-            className="border-2 border-neon-cyan text-neon-cyan bg-gray-800 hover:bg-neon-cyan hover:text-black font-mono font-bold px-8 py-4 transition-all duration-300"
-          >
-            VIEW_ALL_PROJECTS
-          </Button>
         </div>
       </div>
     </section>

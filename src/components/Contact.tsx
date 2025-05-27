@@ -1,9 +1,8 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Mail, Github, Linkedin, Send, MapPin, Clock, Terminal, MessageSquare } from "lucide-react";
+import { Mail, Github, Linkedin, Send, MapPin, Clock, Terminal, MessageSquare, Download } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
@@ -28,6 +27,15 @@ const Contact = () => {
       ...formData,
       [e.target.name]: e.target.value
     });
+  };
+
+  const handleDownloadResume = () => {
+    toast({
+      title: "Resume Download Started!",
+      description: "Your resume download will begin shortly.",
+    });
+    // Here you would typically trigger the actual download
+    // For now, we'll just show the toast
   };
 
   const contactInfo = [
@@ -99,8 +107,9 @@ const Contact = () => {
 
         <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12">
           
-          {/* Contact Form */}
-          <div className="lg:col-span-7 animate-slide-up">
+          {/* Contact Form and Download Resume */}
+          <div className="lg:col-span-7 space-y-6 animate-slide-up">
+            {/* Contact Form */}
             <Card className="bg-gray-900/50 border-gray-700/50 backdrop-blur-sm hover:border-neon-cyan/20 transition-all duration-500">
               <CardHeader>
                 <CardTitle className="text-white text-2xl font-display font-bold flex items-center gap-3">
@@ -163,6 +172,40 @@ const Contact = () => {
                 </form>
               </CardContent>
             </Card>
+
+            {/* Download Resume Box */}
+            <Card className="bg-gray-900/50 border-gray-700/50 backdrop-blur-sm hover:border-neon-purple/20 transition-all duration-500">
+              <CardHeader>
+                <CardTitle className="text-white text-2xl font-display font-bold flex items-center gap-3">
+                  <Download className="w-6 h-6 text-neon-purple" />
+                  Download Resume
+                </CardTitle>
+                <p className="text-gray-400 font-mono text-sm">
+                  {'>'} Get a copy of my complete professional profile
+                </p>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  <p className="text-gray-300 leading-relaxed font-body">
+                    Download my comprehensive resume including detailed work experience, 
+                    technical skills, projects, and achievements in PDF format.
+                  </p>
+                  
+                  <div className="flex items-center gap-2 text-neon-purple font-mono text-sm">
+                    <div className="w-2 h-2 bg-neon-purple rounded-full animate-pulse"></div>
+                    <span>Last updated: December 2024</span>
+                  </div>
+                  
+                  <Button 
+                    onClick={handleDownloadResume}
+                    className="w-full bg-gradient-to-r from-neon-purple to-neon-pink hover:from-neon-pink hover:to-neon-purple text-white font-mono font-bold h-12 text-lg transition-all duration-300"
+                  >
+                    <Download className="w-5 h-5 mr-3" />
+                    DOWNLOAD_RESUME.PDF
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
           </div>
 
           {/* Contact Information */}
@@ -223,7 +266,7 @@ const Contact = () => {
                     key={index}
                     variant="outline"
                     size="icon"
-                    className={`border-gray-600/50 text-gray-600 hover:border-gray-700 ${social.color} hover:bg-gray-800/20 w-12 h-12 rounded-xl transition-all duration-300 group`}
+                    className="border-gray-600/50 text-gray-600 hover:border-gray-700 hover:text-gray-700 hover:bg-gray-800/20 w-12 h-12 rounded-xl transition-all duration-300 group"
                     onClick={() => window.open(social.url, "_blank")}
                   >
                     <social.icon className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
