@@ -40,26 +40,26 @@ const Hero = () => {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 min-h-screen flex items-center justify-center">
+      <div className="relative z-10 min-h-screen flex items-center justify-center pt-20">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             
             {/* Left Side - Main Content */}
-            <div className="lg:col-span-8 space-y-8">
+            <div className="lg:col-span-9 space-y-8">
               <div className="space-y-6 animate-slide-up">
-                <div className="flex items-center gap-3 mb-4">
+                <div className="flex items-center gap-3 mb-6">
                   <Terminal className="w-6 h-6 text-neon-cyan" />
                   <span className="font-mono text-neon-cyan text-sm tracking-wider">PORTFOLIO.EXE</span>
                 </div>
                 
-                <h1 className="text-7xl lg:text-9xl font-black font-display leading-none">
+                <h1 className="text-6xl lg:text-8xl xl:text-9xl font-black font-display leading-none">
                   <span className="block text-white hover:text-neon-cyan transition-colors duration-500 cursor-pointer">
                     RAHUL
                   </span>
                   <span className="block text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan via-neon-blue to-neon-purple">
                     SINGH
                   </span>
-                  <span className="block text-white/80 text-6xl lg:text-7xl">
+                  <span className="block text-white/80 text-5xl lg:text-6xl xl:text-7xl">
                     RAWAT
                   </span>
                 </h1>
@@ -96,10 +96,10 @@ const Hero = () => {
             </div>
 
             {/* Right Side - Stats Grid */}
-            <div className="lg:col-span-4 space-y-6 animate-slide-left" style={{ animationDelay: '0.8s' }}>
-              <div className="grid grid-cols-2 gap-4">
+            <div className="lg:col-span-3 space-y-6 animate-slide-left" style={{ animationDelay: '0.8s' }}>
+              <div className="grid grid-cols-2 lg:grid-cols-1 gap-4">
                 {[
-                  { label: "Projects", value: "7+", color: "text-neon-cyan" },
+                  { label: "Projects", value: "10+", color: "text-neon-cyan" },
                   { label: "Languages", value: "10+", color: "text-neon-purple" },
                   { label: "GPA", value: "8.09", color: "text-neon-pink" }
                 ].map((stat, index) => (
