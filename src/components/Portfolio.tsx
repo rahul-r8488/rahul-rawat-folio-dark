@@ -88,7 +88,7 @@ const Portfolio = () => {
           {projects.map((project, index) => (
             <Card 
               key={index} 
-              className="group bg-gray-900/80 border-gray-700/50 hover:border-neon-cyan/50 transition-all duration-500 backdrop-blur-sm overflow-hidden relative animate-slide-up hover:scale-105 hover:shadow-2xl hover:shadow-neon-cyan/20"
+              className="group bg-gray-900/80 border-gray-700/50 hover:border-neon-cyan/50 transition-all duration-300 backdrop-blur-sm overflow-hidden relative animate-slide-up hover:scale-105"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
               {/* Project Image */}
@@ -96,12 +96,12 @@ const Portfolio = () => {
                 <img 
                   src={project.image} 
                   alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent group-hover:from-gray-900/60 transition-all duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent group-hover:from-gray-900/60 transition-all duration-300"></div>
                 
                 {/* Overlay on hover */}
-                <div className="absolute inset-0 bg-neon-cyan/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-neon-cyan/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
               
               {/* Project Content */}
@@ -114,14 +114,14 @@ const Portfolio = () => {
               <CardFooter className="flex gap-3 pt-0">
                 <Button 
                   variant="outline" 
-                  className="flex-1 border-gray-600 text-gray-300 bg-gray-800 hover:border-neon-cyan hover:text-neon-cyan hover:bg-gray-700 font-mono text-xs transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-neon-cyan/30"
+                  className="flex-1 border-gray-600 text-gray-300 bg-gray-800 hover:border-neon-cyan hover:text-neon-cyan hover:bg-gray-700 font-mono text-xs transition-all duration-300"
                   onClick={() => window.open(project.github, '_blank')}
                 >
                   <Github className="w-4 h-4 mr-2" />
                   SOURCE
                 </Button>
                 <Button 
-                  className="flex-1 bg-neon-cyan text-black hover:bg-neon-blue hover:text-black font-mono text-xs font-bold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-neon-cyan/50"
+                  className="flex-1 bg-neon-cyan text-black hover:bg-neon-blue hover:text-black font-mono text-xs font-bold transition-all duration-300"
                   onClick={() => window.open(project.live, '_blank')}
                 >
                   <ExternalLink className="w-4 h-4 mr-2" />

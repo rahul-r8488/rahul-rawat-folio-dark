@@ -42,7 +42,7 @@ const CustomCursor = () => {
     <>
       {/* Main cursor */}
       <div
-        className={`fixed pointer-events-none z-50 mix-blend-difference transition-all duration-150 ease-out ${
+        className={`fixed pointer-events-none z-50 transition-transform duration-100 ease-out ${
           isClicking ? 'scale-75' : isHovering ? 'scale-150' : 'scale-100'
         }`}
         style={{
@@ -55,15 +55,15 @@ const CustomCursor = () => {
         <div className="w-full h-full bg-neon-cyan rounded-full" />
       </div>
 
-      {/* Cursor trail */}
+      {/* Cursor trail - simplified */}
       <div
-        className="fixed pointer-events-none z-40 transition-all duration-500 ease-out border-2 border-neon-cyan/50 rounded-full"
+        className="fixed pointer-events-none z-40 transition-all duration-200 ease-out border border-neon-cyan/30 rounded-full"
         style={{
-          left: position.x - 20,
-          top: position.y - 20,
-          width: '40px',
-          height: '40px',
-          transform: `scale(${isHovering ? 1.5 : 1})`,
+          left: position.x - 15,
+          top: position.y - 15,
+          width: '30px',
+          height: '30px',
+          transform: `scale(${isHovering ? 1.2 : 1})`,
         }}
       />
     </>
