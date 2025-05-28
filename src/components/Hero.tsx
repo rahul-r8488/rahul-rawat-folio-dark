@@ -1,15 +1,7 @@
 
-import { ArrowDown, Code, Terminal } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Code, Terminal } from "lucide-react";
 
 const Hero = () => {
-  const scrollToAbout = () => {
-    const element = document.getElementById("about");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <section className="min-h-screen relative overflow-hidden bg-black">
       {/* Matrix Rain Effect - Reduced opacity */}
@@ -79,20 +71,6 @@ const Hero = () => {
                 digital experiences that bridge <span className="text-neon-purple font-semibold">innovation</span> and 
                 <span className="text-neon-blue font-semibold"> functionality</span>.
               </p>
-
-              <div className="flex flex-col sm:flex-row gap-4 animate-slide-up" style={{ animationDelay: '0.6s' }}>
-                <Button
-                  onClick={scrollToAbout}
-                  size="lg"
-                  className="group relative overflow-hidden bg-gray-800 border-2 border-neon-cyan text-neon-cyan font-mono font-bold px-8 py-4 hover:bg-neon-cyan hover:text-black transition-all duration-300"
-                >
-                  <span className="relative z-10 flex items-center">
-                    EXPLORE_PORTFOLIO
-                    <ArrowDown className="ml-3 h-5 w-5 group-hover:translate-y-1 transition-transform duration-300" />
-                  </span>
-                  <div className="absolute inset-0 bg-neon-cyan transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
-                </Button>
-              </div>
             </div>
 
             {/* Right Side - Stats Grid */}
