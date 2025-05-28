@@ -2,7 +2,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Terminal } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import ThemeToggle from "@/components/ThemeToggle";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -61,9 +60,8 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* Theme Toggle and Mobile Menu */}
+          {/* Mobile Menu Button */}
           <div className="flex items-center gap-3">
-            <ThemeToggle />
             <Button
               variant="ghost"
               size="icon"

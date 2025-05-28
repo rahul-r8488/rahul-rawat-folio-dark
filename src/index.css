@@ -82,11 +82,6 @@
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
-
-  .light {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-  }
 }
 
 @layer base {
@@ -96,6 +91,7 @@
 
   html {
     scroll-behavior: smooth;
+    @apply dark;
   }
 
   body {
@@ -125,34 +121,4 @@
   ::-webkit-scrollbar-thumb:hover {
     background: #00d4ff;
   }
-}
-
-/* Theme transitions */
-.dark {
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.light {
-  transition: background-color 0.3s ease, color 0.3s ease;
-  background: linear-gradient(to bottom right, #f8fafc, #e2e8f0);
-}
-
-.light .bg-black {
-  background: linear-gradient(to bottom right, #ffffff, #f1f5f9) !important;
-}
-
-.light .bg-gray-900 {
-  background: #f8fafc !important;
-}
-
-.light .text-white {
-  color: #1e293b !important;
-}
-
-.light .text-gray-300 {
-  color: #475569 !important;
-}
-
-.light .text-gray-400 {
-  color: #64748b !important;
 }

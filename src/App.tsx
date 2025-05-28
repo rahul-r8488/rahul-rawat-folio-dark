@@ -5,7 +5,6 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { ThemeProvider } from "@/contexts/ThemeContext";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import LoadingScreen from "@/components/LoadingScreen";
@@ -23,27 +22,25 @@ const App = () => {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <ThemeProvider>
-        <TooltipProvider>
-          <Toaster />
-          <Sonner />
-          
-          {isLoading && <LoadingScreen onLoadingComplete={handleLoadingComplete} />}
-          
-          {!isLoading && (
-            <>
-              <CustomCursor />
-              <ParticleSystem />
-              <BrowserRouter>
-                <Routes>
-                  <Route path="/" element={<Index />} />
-                  <Route path="*" element={<NotFound />} />
-                </Routes>
-              </BrowserRouter>
-            </>
-          )}
-        </TooltipProvider>
-      </ThemeProvider>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        
+        {isLoading && <LoadingScreen onLoadingComplete={handleLoadingComplete} />}
+        
+        {!isLoading && (
+          <>
+            <CustomCursor />
+            <ParticleSystem />
+            <BrowserRouter>
+              <Routes>
+                <Route path="/" element={<Index />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </BrowserRouter>
+          </>
+        )}
+      </TooltipProvider>
     </QueryClientProvider>
   );
 };

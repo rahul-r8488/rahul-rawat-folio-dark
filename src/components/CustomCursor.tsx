@@ -42,7 +42,7 @@ const CustomCursor = () => {
     <>
       {/* Main cursor */}
       <div
-        className={`fixed pointer-events-none z-50 transition-transform duration-100 ease-out ${
+        className={`fixed pointer-events-none z-50 transition-transform duration-50 ease-out ${
           isClicking ? 'scale-75' : isHovering ? 'scale-150' : 'scale-100'
         }`}
         style={{
@@ -57,7 +57,7 @@ const CustomCursor = () => {
 
       {/* Cursor trail - simplified */}
       <div
-        className="fixed pointer-events-none z-40 transition-all duration-200 ease-out border border-neon-cyan/30 rounded-full"
+        className="fixed pointer-events-none z-40 transition-all duration-100 ease-out border border-neon-cyan/30 rounded-full"
         style={{
           left: position.x - 15,
           top: position.y - 15,
