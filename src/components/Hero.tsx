@@ -1,5 +1,5 @@
-
-import { Code, Terminal } from "lucide-react";
+import { Code, Terminal, Palette } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const Hero = () => {
   return (
@@ -71,6 +71,20 @@ const Hero = () => {
                 digital experiences that bridge <span className="text-neon-purple font-semibold">innovation</span> and 
                 <span className="text-neon-blue font-semibold"> functionality</span>.
               </p>
+
+              {/* Alternative Site Link */}
+              <div className="flex gap-4 animate-slide-up" style={{ animationDelay: '0.6s' }}>
+                <Button
+                  onClick={() => window.open('/alternative', '_self')}
+                  className="group relative overflow-hidden bg-transparent border-2 border-neon-purple text-neon-purple font-mono font-bold px-6 py-3 hover:bg-neon-purple hover:text-black transition-all duration-300"
+                >
+                  <span className="relative z-10 flex items-center">
+                    <Palette className="mr-2 h-4 w-4" />
+                    ALTERNATIVE_THEME
+                  </span>
+                  <div className="absolute inset-0 bg-neon-purple transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                </Button>
+              </div>
             </div>
 
             {/* Right Side - Stats Grid */}
